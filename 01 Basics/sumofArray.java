@@ -1,20 +1,20 @@
-import java.util.*;
-public class Solution {
 
-    public static int sumOfArray(int[] arr, int n, int index) {
-        if (index == n) {
-            return 0; //Base case
+public class Main {
+
+    public static int sumOfDigits(int n) {
+
+        // Base case
+        if (n == 0) {
+            return 0;
         }
 
-        return arr[index] + sumOfArray(arr, n, index + 1);
+        return (n % 10) + sumOfDigits(n / 10);
     }
 
     public static void main(String[] args) {
 
-        int[] arr = {1, 2, 3, 4};
+        int n = 1234;
 
-        int sum = sumOfArray(arr, arr.length, 0);
-
-        System.out.println(sum);
+        System.out.println(sumOfDigits(n));
     }
 }
